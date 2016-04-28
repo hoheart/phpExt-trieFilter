@@ -1,6 +1,7 @@
 .DS_Store
 .buildpath
 .project
+.cproject
 .settings
 .deps
 .libs/
