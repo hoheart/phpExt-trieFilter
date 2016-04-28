@@ -371,7 +371,7 @@ PHP_FUNCTION(trie_filter_store)
     RETURN_TRUE;
 }
 
-PHP_FUNCTION(trie_filter_store)
+PHP_FUNCTION(trie_filter_del)
 {
 	Trie *trie;
 	zval *trie_resource;
@@ -395,7 +395,7 @@ PHP_FUNCTION(trie_filter_store)
         p++;
     }
     alpha_key[i] = TRIE_CHAR_TERM;
-    if (! trie_delete(trie, alpha_key, -1)) {
+    if (! trie_delete(trie, alpha_key)) {
         RETURN_FALSE;
     }
     RETURN_TRUE;
