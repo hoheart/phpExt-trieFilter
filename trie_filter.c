@@ -175,7 +175,7 @@ static int trie_search_all(Trie *trie, const AlphaChar *text, zval *data) {
 
 	base = text;
 	if (!(s = trie_root(trie))) {
-		return -1;
+		return -1 ;
 	}
 
 	while (*text) {
