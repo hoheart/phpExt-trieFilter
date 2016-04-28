@@ -50,7 +50,8 @@ PHP_FUNCTION(trie_filter_load);
 PHP_FUNCTION(trie_filter_search);
 PHP_FUNCTION(trie_filter_search_all);
 PHP_FUNCTION(trie_filter_new);
-PHP_FUNCTION(trie_filter_store);
+PHP_FUNCTION(trie_filter_store);//逐个词加入
+PHP_FUNCTION(trie_filter_del);//逐个删除
 PHP_FUNCTION(trie_filter_save);
 PHP_FUNCTION(trie_filter_free);
 

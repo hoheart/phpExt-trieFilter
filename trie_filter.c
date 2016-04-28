@@ -370,6 +370,36 @@ PHP_FUNCTION(trie_filter_store)
     }
     RETURN_TRUE;
 }
+
+PHP_FUNCTION(trie_filter_store)
+{
+	Trie *trie;
+	zval *trie_resource;
+	unsigned char *keyword, *p;
+	int keyword_len, i;
+    AlphaChar alpha_key[KEYWORD_MAX_LEN+1];
+
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "rs", 
+				&trie_resource, &keyword, &keyword_len) == FAILURE) {
+		RETURN_FALSE;
+	}
+    if (keyword_len > KEYWORD_MAX_LEN || keyword_len < 1) {
+        php_error_docref(NULL TSRMLS_CC, E_WARNING, "keyword should has [1, %d] bytes", KEYWORD_MAX_LEN);
+        RETURN_FALSE;
+    }
+	ZEND_FETCH_RESOURCE(trie, Trie *, &trie_resource, -1, PHP_TRIE_FILTER_RES_NAME, le_trie_filter);
+    p = keyword;
+    i = 0;
+    while (*p && *p != '\n' && *p != '\r') {
+        alpha_key[i++] = (AlphaChar)*p;
+        p++;
+    }
+    alpha_key[i] = TRIE_CHAR_TERM;
+    if (! trie_delete(trie, alpha_key, -1)) {
+        RETURN_FALSE;
+    }
+    RETURN_TRUE;
+}
 /* }}} */
 
 /* {{{ proto bool trie_filter_save(int trie_tree_identifier, string dict_path)
