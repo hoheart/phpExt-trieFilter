@@ -1,4 +1,4 @@
-/*
+ï»¿/*
   +----------------------------------------------------------------------+
   | PHP Version 5                                                        |
   +----------------------------------------------------------------------+
@@ -50,8 +50,8 @@ PHP_FUNCTION(trie_filter_load);
 PHP_FUNCTION(trie_filter_search);
 PHP_FUNCTION(trie_filter_search_all);
 PHP_FUNCTION(trie_filter_new);
-PHP_FUNCTION(trie_filter_store);//Öğ¸ö´Ê¼ÓÈë
-PHP_FUNCTION(trie_filter_del);//Öğ¸öÉ¾³ı
+PHP_FUNCTION(trie_filter_store);//é€ä¸ªè¯åŠ å…¥
+PHP_FUNCTION(trie_filter_del);//é€ä¸ªåˆ é™¤
 PHP_FUNCTION(trie_filter_save);
 PHP_FUNCTION(trie_filter_free);
 

@@ -40,6 +40,7 @@ zend_function_entry trie_filter_functions[] = {
 	PHP_FE(trie_filter_search_all, NULL)
 	PHP_FE(trie_filter_new, NULL)
 	PHP_FE(trie_filter_store, NULL)
+	PHP_FE(trie_filter_del, NULL)
 	PHP_FE(trie_filter_save, NULL)
 	PHP_FE(trie_filter_free, NULL)
 	{	NULL, NULL, NULL} /* Must be the last line in trie_filter_functions[] */
